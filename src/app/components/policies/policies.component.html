@@ -1,0 +1,25 @@
+
+<div class="container">  
+    <a class="btn Contacto-escribir-total-formulario-btn" *ngIf="loggedIn" routerLink='/policy/new'>Add Policy</a>
+    <div class="card mt-2">
+        <div class="card card-cascade narrower border-info text-center border-info" *ngFor="let policy of policies">
+            <div class="card-body">
+                <h4 class="card-title">{{policy.Nombre}}</h4>
+                <p class="card-text">{{policy.Descripcion}}</p>
+                    <h3>{{policy.PrecioPoliza}}</h3>
+                    <label>Tipe coverture: <span>{{policy.TipoCubrimiento}}</span> </label>
+                    <h6>Riesgo:<span>{{policy.TipoRiesgo}}</span></h6>
+            </div>
+            <div class="card-footer">
+                <span>{{policy.InicioVigencia}}</span>
+                <h5>{{policy.PeriodoCobertura}} mounths</h5>
+                <a href="#" class="btn Contacto-escribir-total-formulario-btn" *ngIf="loggedIn" routerLink="/policy/{{policy.IdPolizaSeguro}}" >Edit</a>
+                <a  class="btn Contacto-escribir-total-formulario-cancelar" *ngIf="loggedIn" (click)="confirmDeletePolicy(policy.IdPolizaSeguro)">eliminar</a>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+
+  

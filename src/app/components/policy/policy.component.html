@@ -1,0 +1,36 @@
+<div class="container">
+    <h1 class="Contacto-escribir-total-title">{{title}} policy</h1>
+    <p class="Contacto-escribir-total-description"></p>
+    <div class="Contacto-escribir-total-formulario">
+        <div class="Contacto-escribir-total-formulario-first">
+            <input class="form-control Contacto-escribir-total-formulario-item" type="text" placeholder="Name" [(ngModel)]="policy.Nombre"/>
+            <input class="form-control Contacto-escribir-total-formulario-item" type="number" placeholder="Price policy" [(ngModel)]="policy.PrecioPoliza"/>
+        </div>
+        <textarea class="form-control Contacto-escribir-total-formulario-item--textarea" placeholder="Descripcion" [(ngModel)]="policy.Descripcion"></textarea>
+        <div class="Contacto-escribir-total-formulario-first">
+          
+                <select class="form-control Contacto-escribir-total-formulario-item--textarea" name="miselect" [(ngModel)]="policy.IdTipoCubrimiento">
+                        <option value="1">Terremoto</option>
+                        <option value="2">incendio</option>
+                        <option value="3">Robo</option>
+                        <option value="4">Pérdida</option>
+                        <option value="5">Otro</option>
+                </select>     
+                <input class="form-control Contacto-escribir-total-formulario-item" type="date" placeholder="Inicio de Vigencia" [(ngModel)]="policy.InicioVigencia"/>                   
+                
+        </div>
+
+        <div class="Contacto-escribir-total-formulario-first">
+                <input class="form-control Contacto-escribir-total-formulario-item" type="number" placeholder="Coverage" [(ngModel)]="policy.PeriodoCobertura"/>    
+                <select class="form-control Contacto-escribir-total-formulario-item--textarea" name="miselect2" [(ngModel)]="policy.IdTipoRiesgo">
+                        <option value="1">bajo</option>
+                        <option value="2">medio</option>
+                        <option value="3">medio-altoo</option>
+                        <option value="4">alto</option>
+                </select>     
+        </div>
+        <button class="btn Contacto-escribir-total-formulario-btn" type="submit" (click)="savePolicy()">{{nombreBtn}}</button>
+        <button class="btn Contacto-escribir-total-formulario-cancelar" type="submit" routerLink="/policies">Cancelar</button>
+    </div>
+</div>
+     

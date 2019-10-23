@@ -1,0 +1,27 @@
+
+<div class="container">
+        <table class="table table-hover table-fixed">
+
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Occupation</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let client of clients">
+                    <th scope="row">{{client.Nombre}}</th>
+                    <td>{{client.Pais}}</td>
+                    <td>{{client.Ocupacion}}</td>
+                    <td>
+                        <a class="btn Contacto-escribir-total-formulario-btn" routerLink="/addPolicy/{{client.IdCliente}}">Add Policy</a>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+               
+              
+              </table>
+</div>
